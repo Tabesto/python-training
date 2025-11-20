@@ -33,10 +33,10 @@ exercise-<number>/<firstname>
 
 ### Examples
 
-- `exercise-1/Nicolas`
-- `exercise-1/Stewen`
-- `exercise-2/Nicolas`
-- `exercise-3/Stewen`
+- `exercise-1/nicolas`
+- `exercise-1/stewen`
+- `exercise-2/nicolas`
+- `exercise-3/stewen`
 
 ## Recommended Workflow
 
