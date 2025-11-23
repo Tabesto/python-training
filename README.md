@@ -18,6 +18,14 @@ The default branch will contain the baseline structure of the repository.
 
 ---
 
+## Exercises
+
+The exercise specifications are available in the [`docs/`](./docs/) directory:
+
+- **[Exercise 1 - Mini HR Manager](./docs/exercise1-hr-api.md)**: Build a Flask backend API to manage companies, roles, users, and employees.
+
+---
+
 ## Branch Naming Convention
 
 Each branch must follow this pattern:
