@@ -78,3 +78,23 @@ Please use Conventional Commits for commit messages (e.g. feat:, fix:, docs:, et
 Depending on how the trainer/team wants to proceed:
 - Open a PR/MR from your branch to main (or another review branch).
 - The trainer can then review, comment, and approve the solution.
+
+---
+
+## Project Structure
+
+The baseline Flask app is organized by domain to keep responsibilities clear:
+
+- `app/__init__.py` – Flask application factory, blueprint registration, error handlers
+- `app/routes/` – HTTP routes grouped in Blueprints (e.g. `users.py`)
+- `app/services/` – Domain logic orchestrating repositories and models
+- `app/repositories/` – Data access code (SQLite users table)
+- `app/models/` – Pydantic models shared across layers
+- `users.sqlite3` – Local SQLite database seeded at startup
+
+To start the API locally:
+
+```
+make install   # first time only
+make run
+```

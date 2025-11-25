@@ -1,0 +1,25 @@
+meta {
+  name: Users - Delete
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{url}}/users/{{user_id}}
+  body: json
+  auth: inherit
+}
+
+script:post-response {
+  let responseBody = res.getBody(); 
+  console.log(responseBody);
+  console.log(responseBody.user_id);
+  if(responseBody.user_id) {
+    bru.setEnvVar("user_id", responseBody.user_id);
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

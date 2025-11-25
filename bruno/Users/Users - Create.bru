@@ -1,0 +1,31 @@
+meta {
+  name: Users - Create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "John"
+  }
+}
+
+script:post-response {
+  let responseBody = res.getBody(); 
+  console.log(responseBody);
+  console.log(responseBody.user_id);
+  if(responseBody.user_id) {
+    bru.setEnvVar("user_id", responseBody.user_id);
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
