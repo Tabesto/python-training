@@ -20,7 +20,7 @@ class UserCreate(BaseModel):
     first_name: str = Field(..., min_length=1, max_length=50)
     last_name: str = Field(..., min_length=1, max_length=50)
     company_id: int
-    role_id: Optional[int] = None
+    role: Optional[str] = None
     email: Optional[str] = Field(None, max_length=100)
     active: bool = True
     
@@ -28,7 +28,7 @@ class UserUpdate(BaseModel):
     first_name: Optional[str] = Field(None, min_length=1, max_length=50)
     last_name: Optional[str] = Field(None, min_length=1, max_length=50)
     company_id: Optional[int] = None
-    role_id: Optional[int] = None
+    role: Optional[str] = None
     email: Optional[str] = Field(None, max_length=100)
     active: Optional[bool] = None
     
@@ -37,7 +37,7 @@ class UserRead(BaseModel):
     first_name: str
     last_name: str
     company_id: int
-    role_id: Optional[int]
+    role: Optional[str]
     email: Optional[str]
     active: bool
     
@@ -46,14 +46,14 @@ class EmployeeCreate(BaseModel):
     first_name: str = Field(..., min_length=1, max_length=50)
     last_name: str = Field(..., min_length=1, max_length=50)
     company_id: int
-    role_id: Optional[int] = None
+    role: Optional[str] = None
     active: bool = True
 
 class EmployeeUpdate(BaseModel):
     first_name: Optional[str] = Field(None, min_length=1, max_length=50)
     last_name: Optional[str] = Field(None, min_length=1, max_length=50)
     company_id: Optional[int] = None
-    role_id: Optional[int] = None
+    role: Optional[str] = None
     active: Optional[bool] = None
     
 class EmployeeRead(BaseModel):
@@ -61,7 +61,7 @@ class EmployeeRead(BaseModel):
     first_name: str
     last_name: str
     company_id: int
-    role_id: Optional[int]
+    role: Optional[str]
     active: bool
 
 # --- Preset ---
